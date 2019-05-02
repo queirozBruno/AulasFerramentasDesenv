@@ -6,6 +6,7 @@ using System.Data.Entity;
 //using GerencProdAndCateg.Models;
 using Modelo.Cadastros;
 using Modelo.Tabelas;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Persistencia.Contexts
 {
