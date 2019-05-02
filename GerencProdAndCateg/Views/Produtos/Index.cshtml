@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Modelo.Cadastros.Produto>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Listagem de Produtos"; 
+}
+
+<div>Relação de Produtos Registrados</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProdutoId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>Categoria</th>
+                <th>Fabricante</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.ProdutoId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.categoria.nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.fabricante.Nome)</td>
+                    <td>
+                        @Html.ActionLink("Alterar", "Edit", new
+                        {
+                            id = item.ProdutoId
+                        })
+
+                        @Html.ActionLink("Detalhes", "Details", new
+                        {
+                            id = item.ProdutoId
+                        })
+
+                        @Html.ActionLink("Excluir", "Delete", new
+                        {
+                            id = item.ProdutoId
+                        })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        @Html.ActionLink("Cadastrar novo produto", "Create", new
+        {
+            @class = "btn btn-success"
+        })
+    </div>
+</div>
+
+@*<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.FabricanteId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.FabricanteId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.FabricanteId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>*@
