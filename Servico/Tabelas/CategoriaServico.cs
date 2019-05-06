@@ -8,8 +8,12 @@ using Persistencia.DAL.Tabelas;
 
 namespace Servico.Tabelas
 {
-    class CategoriaServico
+    public class CategoriaServico
     {
-
+        private CategoriaDAL categoriaDAL = new CategoriaDAL();
+        public IQueryable<Categoria> ObterCategoriasClassificadasPorNome()
+        {
+            return categoriaDAL.ObterCategoriasClassificadasPorNome();
+        }
     }
 }

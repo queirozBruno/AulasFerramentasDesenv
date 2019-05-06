@@ -13,7 +13,7 @@ namespace GerencProdAndCateg.Controllers
 {
     public class CategoriasController : Controller
     {
-        private EFContext context = new EFContext();
+        //private EFContext context = new EFContext();
 
         private static IList<Categoria> categorias = new List<Categoria>()
         {          
